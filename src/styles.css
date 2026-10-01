@@ -88,6 +88,10 @@ h1 {
   margin-bottom: 18px;
 }
 
+.metrics-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .metric {
   background: #fff;
   border: 1px solid #dfe7f1;
@@ -251,10 +255,177 @@ textarea {
   padding: 32px 12px;
 }
 
+/* ---------- 交接台账 ---------- */
+
+.price-readout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  background: #f3f8fc;
+  border: 1px dashed #b9cfe0;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 13px;
+  color: #536078;
+}
+
+.price-readout strong {
+  font-size: 17px;
+  color: #176b87;
+}
+
+.price-readout.up strong { color: #c84b31; }
+.price-readout.down strong { color: #14724f; }
+
+.hint {
+  margin: 0;
+  font-size: 12px;
+  color: #8a94a6;
+}
+
+.price-cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.price-card {
+  border: 1px solid #dfe7f1;
+  border-radius: 8px;
+  padding: 12px;
+  background: #fbfcfe;
+  display: grid;
+  gap: 4px;
+}
+
+.price-card span {
+  color: #69758c;
+  font-size: 13px;
+}
+
+.price-card strong {
+  font-size: 24px;
+  color: #176b87;
+}
+
+.price-card em {
+  font-style: normal;
+  font-size: 12px;
+  color: #8a94a6;
+}
+
+.section-head {
+  margin: 22px 0 12px;
+  padding-top: 16px;
+  border-top: 1px solid #eef2f7;
+}
+
+.section-head h2 {
+  margin: 0;
+  font-size: 19px;
+}
+
+.section-head small {
+  font-weight: 400;
+  color: #8a94a6;
+  font-size: 13px;
+}
+
+.details-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.diff.up { color: #c84b31; font-weight: 700; }
+.diff.down { color: #14724f; font-weight: 700; }
+
+.batch-no {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: #eef5fb;
+  color: #176b87;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status-pending {
+  background: #fff5e0;
+  color: #b26b00;
+}
+
+.status-failed {
+  background: #fde6e0;
+  color: #c84b31;
+}
+
+.record-failed {
+  border-color: #e9b7a8;
+  background: #fff9f7;
+}
+
+.note-warn {
+  background: #fff5e0;
+  color: #8a5410;
+  border: 1px solid #f0d9a8;
+}
+
+.note-queue {
+  background: #eef5fb;
+  color: #176b87;
+}
+
+.freeze-line {
+  font-size: 12px;
+  color: #8a94a6;
+  margin-bottom: 10px;
+}
+
+.date-inline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: #536078;
+  margin-bottom: 12px;
+}
+
+.date-inline input {
+  width: auto;
+  padding: 7px 10px;
+}
+
+.ledger-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.ledger-table th,
+.ledger-table td {
+  text-align: left;
+  padding: 9px 10px;
+  border-bottom: 1px solid #eef2f7;
+  white-space: nowrap;
+}
+
+.ledger-table th {
+  color: #69758c;
+  font-weight: 600;
+  background: #f7f9fc;
+}
+
+.ledger-table td.up { color: #c84b31; font-weight: 700; }
+.ledger-table td.down { color: #14724f; font-weight: 700; }
+
 @media (max-width: 860px) {
   .app { padding: 18px; }
   .topbar, .workspace { grid-template-columns: 1fr; }
   .stack { justify-content: flex-start; }
-  .metrics { grid-template-columns: 1fr; }
-  .details { grid-template-columns: 1fr; }
+  .metrics, .metrics-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .details, .details-3 { grid-template-columns: 1fr; }
+  .price-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ledger-table { display: block; overflow-x: auto; }
 }
